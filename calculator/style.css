@@ -1,0 +1,110 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e0e5ec;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: #e0e5ec;
+    padding: 20px; /* Decreased padding */
+    border-radius: 15px; /* Decreased border-radius */
+    box-shadow: 8px 8px 20px #b8b8b8, -8px -8px 20px #ffffff; /* Adjusted shadow */
+    width: 280px; /* Decreased container width */
+}
+
+h1 {
+    color: #4a4a4a;
+    font-weight: 300;
+    font-size: 1.5em; /* Decreased font size */
+}
+
+.calculator {
+    width: 100%;
+    border-radius: 12px; /* Decreased border-radius */
+    background-color: #e0e5ec;
+    box-shadow: inset 4px 4px 12px #c6c9d0, inset -4px -4px 12px #faffff;
+}
+
+#display {
+    width: 100%;
+    height: 60px; /* Decreased height */
+    font-size: 2em; /* Decreased font size */
+    text-align: right;
+    border: none;
+    border-radius: 8px; /* Decreased border-radius */
+    background-color: #333;
+    color: #fff;
+    padding: 8px; /* Decreased padding */
+    box-sizing: border-box;
+    margin-bottom: 15px; /* Decreased margin */
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; /* Decreased gap */
+}
+
+.btn {
+    padding: 15px; /* Decreased padding */
+    font-size: 1.2em; /* Decreased font size */
+    font-weight: bold;
+    border: none;
+    border-radius: 8px; /* Decreased border-radius */
+    cursor: pointer;
+    background-color: #e0e5ec;
+    box-shadow: 4px 4px 8px #c6c9d0, -4px -4px 8px #faffff;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:active {
+    box-shadow: inset 3px 3px 6px #c6c9d0, inset -3px -3px 6px #faffff;
+}
+
+.operator {
+    color: #007bff;
+}
+
+.clear, .backspace {
+    color: #dc3545;
+}
+
+.equal {
+    grid-column: span 1;
+    background-color: #007bff;
+    color: white;
+}
+
+.equal:active {
+    background-color: #0056b3;
+    box-shadow: inset 3px 3px 6px #0056b3, inset -3px -3px 6px #009fff;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.joke-area {
+    margin-top: 20px; /* Decreased margin */
+    padding: 15px; /* Decreased padding */
+    background-color: #d1d9e6;
+    border-radius: 12px; /* Decreased border-radius */
+    box-shadow: 4px 4px 8px #c6c9d0, -4px -4px 8px #faffff;
+}
+
+h2 {
+    color: #4a4a4a;
+    font-weight: 400;
+    font-size: 1.2em; /* Decreased font size */
+}
+
+#joke-text {
+    font-size: 1em; /* Decreased font size */
+    color: #555;
+}
