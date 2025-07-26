@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentInput = '';
     
-    // --- More Jokes Added Here ---
     const jokes = [
         "Why don't scientists trust atoms? Because they make up everything!",
         "What do you call a fake noodle? An impasta!",
@@ -28,36 +27,43 @@ document.addEventListener('DOMContentLoaded', () => {
         "I'm on a seafood diet. I see food, and I eat it.",
         "What's a vampire's favorite fruit? A neck-tarine."
     ];
-    // --- End of Jokes ---
 
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             const buttonValue = button.textContent;
 
+            // Handle number and operator clicks
             if (button.classList.contains('number') || button.classList.contains('operator')) {
                 currentInput += buttonValue;
                 display.value = currentInput;
-            } else if (button.classList.contains('clear')) { // 'AC' button
+            } 
+            // Handle 'AC' (All Clear) button
+            else if (button.classList.contains('clear')) {
                 currentInput = '';
                 display.value = '';
-                jokeTextElement.textContent = "Press the '=' button for a joke!";
-            } else if (button.classList.contains('backspace')) { // Backspace functionality
-                currentInput = currentInput.slice(0, -1); 
+                jokeTextElement.textContent = "Press the '=' button for a joke!"; // Reset joke text
+            } 
+            // Handle '←' (Backspace/Delete) button
+            else if (button.classList.contains('backspace')) {
+                currentInput = currentInput.slice(0, -1); // Remove the last character
                 display.value = currentInput;
-                if (currentInput === '') { 
-                    display.value = ''; 
+                if (currentInput === '') { // Ensure display is truly empty if all characters are deleted
+                    display.value = '';
                 }
-            } else if (button.classList.contains('equal')) {
+            }
+            // Handle '=' (Equals) button
+            else if (button.classList.contains('equal')) {
                 try {
-                    let result = eval(currentInput);
+                    // Evaluate the expression. Note: eval() should be used with caution in real-world apps
+                    let result = eval(currentInput); 
                     display.value = result;
-                    currentInput = result; 
+                    currentInput = result.toString(); // Convert result back to string for chained operations
                 } catch (e) {
                     display.value = 'Error';
-                    currentInput = '';
+                    currentInput = ''; // Clear input on error
                 }
                 
-                // Get a random joke
+                // Display a random joke after calculation
                 const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
                 jokeTextElement.textContent = randomJoke;
             }
